@@ -1,7 +1,12 @@
 import "../scss/App.scss";
+import Header from "./Header";
 
 function App() {
-  return <h1>Hola mundo</h1>;
+  return (
+    <>
+      <Header />
+    </>
+  );
 }
 
 export default App;
