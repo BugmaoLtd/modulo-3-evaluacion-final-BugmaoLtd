@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import getCharactersfromAPI from "../services/getCharactersfromAPI";
 import CharactersList from "./CharactersList";
 import Filters from "./Filters";
+import { Routes, Route, useLocation, matchPath } from "react-router-dom";
+import CharacterDetail from "./CharacterDetail";
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -23,12 +25,37 @@ function App() {
     return character.name.toLowerCase().includes(filterName);
   });
 
+  const { pathname } = useLocation();
+  const routeData = matchPath("/detail/:id", pathname);
+
+  let idCharacterRoute = undefined;
+  if (routeData !== null) {
+    idCharacterRoute = routeData.params.id;
+  }
+
+  const characterSelected = filteredCharacters.find((character) => {
+    return character.id === idCharacterRoute;
+  });
+
   return (
     <>
       <Header />
       <main>
-        <Filters onChangeName={changeName} />
-        <CharactersList charactersData={filteredCharacters} />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Filters onChangeName={changeName} />
+                <CharactersList charactersData={filteredCharacters} />
+              </>
+            }
+          />
+          <Route
+            path="/detail/:id"
+            element={<CharacterDetail characterDetail={characterSelected} />}
+          />
+        </Routes>
       </main>
     </>
   );
