@@ -1,14 +1,12 @@
-import { Link } from "react-router-dom";
-
-function CharacterDetail(characterDetail) {
+function CharacterDetail({ character }) {
   return (
     <li>
-      <img src={characterDetail.urlImage} alt={characterDetail.name} />
-      <h4>{characterDetail.name}</h4>
-      <p>{characterDetail.species}</p>
-      <p>Planeta de origen</p>
-      <p>Número de episodios</p>
-      <p>Estatus vital</p>
+      <img src={character.urlImage} alt={character.name} />
+      <h4>{character.name}</h4>
+      <p>{character.species}</p>
+      <p>{character.planetOrigin}</p>
+      <p>Episodes: {character.epNumber}</p>
+      <p>{character.lifeStatus}</p>
     </li>
   );
 }

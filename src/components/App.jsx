@@ -34,7 +34,8 @@ function App() {
   }
 
   const characterSelected = filteredCharacters.find((character) => {
-    return character.id === idCharacterRoute;
+    console.log(character);
+    return String(character.id) === idCharacterRoute;
   });
 
   return (
@@ -53,7 +54,7 @@ function App() {
           />
           <Route
             path="/detail/:id"
-            element={<CharacterDetail characterDetail={characterSelected} />}
+            element={<CharacterDetail character={characterSelected} />}
           />
         </Routes>
       </main>
