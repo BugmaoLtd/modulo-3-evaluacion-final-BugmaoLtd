@@ -1,12 +1,13 @@
 import "../scss/App.scss";
 import Header from "./Header";
-import CharacterList from "./CharactersList";
 import { useEffect, useState } from "react";
 import getCharactersfromAPI from "../services/getCharactersfromAPI";
 import CharactersList from "./CharactersList";
+import Filters from "./Filters";
 
 function App() {
   const [characters, setCharacters] = useState([]);
+  const [filterName, setFilterName] = useState("");
 
   useEffect(() => {
     getCharactersfromAPI().then((charactersList) => {
@@ -14,11 +15,20 @@ function App() {
     });
   }, []);
 
+  const changeName = (valueInput) => {
+    setFilterName(valueInput);
+  };
+
+  const filteredCharacters = characters.filter((character) => {
+    return character.name.toLowerCase().includes(filterName);
+  });
+
   return (
     <>
       <Header />
       <main>
-        <CharacterList charactersData={characters} />
+        <Filters onChangeName={changeName} />
+        <CharactersList charactersData={filteredCharacters} />
       </main>
     </>
   );
