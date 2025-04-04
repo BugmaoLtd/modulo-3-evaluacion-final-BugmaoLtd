@@ -1,13 +1,11 @@
 import logoRm from "../images/logo.png";
+import Filters from "./Filters";
 
 function Header() {
   return (
     <header>
-      <img className="header__logo" src="{logoRm}" alt="Logo Rick y Morty" />
-      <form action="">
-        <label htmlFor="name">Busca por nombre</label>
-        <input id="name" type="text" />
-      </form>
+      <img className="header__logo" src={logoRm} alt="Logo Rick y Morty" />
+      <Filters />
     </header>
   );
 }
