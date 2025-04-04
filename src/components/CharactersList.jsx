@@ -1,10 +1,12 @@
 import CharacterCard from "./CharacterCard";
 
-function CharactersList() {
+function CharactersList({ charactersData }) {
   return (
     <section>
       <ul>
-        <CharacterCard />
+        {/* {charactersData.map((character) => {
+          return <CharacterCard character={character} key={character.id} />;
+        })} */}
       </ul>
     </section>
   );

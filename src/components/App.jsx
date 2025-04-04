@@ -1,21 +1,24 @@
 import "../scss/App.scss";
 import Header from "./Header";
 import CharacterList from "./CharactersList";
-import { useEffect } from "react";
-import getCharactersFromAPI from "../services/getCharactersfromAPI";
+import { useEffect, useState } from "react";
+import getCharactersfromAPI from "../services/getCharactersfromAPI";
+import CharactersList from "./CharactersList";
 
 function App() {
+  const [characters, setCharacters] = useState([]);
+
   useEffect(() => {
-    getCharactersFromAPI().then(charactersList) => {
-      console.log(charactersList);
-    }
+    getCharactersfromAPI().then((charactersList) => {
+      setCharacters(charactersList);
+    });
   }, []);
 
   return (
     <>
       <Header />
       <main>
-        <CharacterList />
+        <CharacterList characterData={characters} />
       </main>
     </>
   );
