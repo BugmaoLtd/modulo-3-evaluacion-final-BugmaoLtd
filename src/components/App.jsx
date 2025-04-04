@@ -18,7 +18,7 @@ function App() {
     <>
       <Header />
       <main>
-        <CharacterList characterData={characters} />
+        <CharacterList charactersData={characters} />
       </main>
     </>
   );

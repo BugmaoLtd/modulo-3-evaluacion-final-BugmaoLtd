@@ -1,9 +1,9 @@
-function CharacterCard() {
+function CharacterCard({ cardData }) {
   return (
     <li>
-      <img src="" alt="Personaje" />
-      <h4>Personaje</h4>
-      <p>Especie</p>
+      <img src={cardData.urlImage} alt={cardData.name} />
+      <h4>{cardData.name}</h4>
+      <p>{cardData.species}</p>
     </li>
   );
 }

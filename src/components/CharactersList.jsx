@@ -4,9 +4,9 @@ function CharactersList({ charactersData }) {
   return (
     <section>
       <ul>
-        {/* {charactersData.map((character) => {
-          return <CharacterCard character={character} key={character.id} />;
-        })} */}
+        {charactersData.map((card) => {
+          return <CharacterCard cardData={card} key={card.id} />;
+        })}
       </ul>
     </section>
   );
