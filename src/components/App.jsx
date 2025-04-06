@@ -41,7 +41,7 @@ function App() {
   return (
     <>
       <Header />
-      <main>
+      <main className="main">
         <Routes>
           <Route
             path="/"

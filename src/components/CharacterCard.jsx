@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function CharacterCard({ cardData }) {
   return (
-    <li>
+    <li className="card">
       <Link to={`/detail/${cardData.id}`}>
         <img src={cardData.urlImage} alt={cardData.name} />
         <h4>{cardData.name}</h4>

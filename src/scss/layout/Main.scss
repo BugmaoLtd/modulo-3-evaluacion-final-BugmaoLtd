@@ -1,0 +1,65 @@
+@use "../core/variables" as vars;
+
+.header {
+  display: flex;
+  justify-content: center;
+  background-color: vars.$color-secondary;
+}
+
+.searchName {
+  font-family: vars.$font-main;
+  background-color: vars.$color-secondary;
+  color: vars.$color-bg;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+
+  &__label {
+    font-size: 20px;
+    padding-right: 20px;
+  }
+
+  &__field {
+    border: 3px solid vars.$color-bg;
+    padding: 2px;
+    border-radius: 10px;
+  }
+}
+
+.main {
+  height: 100vh;
+  background-color: vars.$color-secondary;
+}
+
+.card {
+  border: 3px solid grey;
+  display: flex;
+  justify-content: center;
+}
+
+.cardList {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+  padding-bottom: 20px;
+  font-family: vars.$font-main;
+  background-color: vars.$color-secondary;
+  color: vars.$color-bg;
+}
+
+.detail {
+  border: 3px solid grey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: vars.$font-main;
+  color: vars.$color-bg;
+  padding: 20px;
+}
+
+.button {
+  padding: 10px;
+  background-color: vars.$color-bg;
+  color: vars.$color-secondary;
+  border-radius: 10px;
+}
