@@ -32,7 +32,6 @@
 }
 
 .main {
-  height: 100vh;
   background-color: vars.$color-secondary;
 }
 
@@ -72,7 +71,7 @@
   &__button {
     padding: 10px;
     margin-top: 20px;
-    width: 50%;
+    width: 60%;
     background-color: vars.$color-bg;
     color: vars.$color-secondary;
     border-radius: 10px;
