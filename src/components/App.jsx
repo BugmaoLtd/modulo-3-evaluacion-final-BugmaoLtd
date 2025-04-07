@@ -39,7 +39,7 @@ function App() {
   });
 
   return (
-    <>
+    <div className="root">
       <Header />
       <main className="main">
         <Routes>
@@ -58,7 +58,7 @@ function App() {
           />
         </Routes>
       </main>
-    </>
+    </div>
   );
 }
 
