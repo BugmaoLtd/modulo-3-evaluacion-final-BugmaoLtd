@@ -8,6 +8,7 @@
   display: flex;
   justify-content: center;
   background-color: vars.$color-secondary;
+  padding-top: 40px;
 }
 
 .searchName {
@@ -49,6 +50,7 @@
   font-family: vars.$font-main;
   background-color: vars.$color-secondary;
   color: vars.$color-bg;
+  width: 98vw;
 }
 
 .detail {
@@ -74,5 +76,60 @@
     background-color: vars.$color-bg;
     color: vars.$color-secondary;
     border-radius: 10px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .header {
+    width: 100vw;
+    &__logo {
+      width: 80vw;
+      padding-top: 40px;
+    }
+  }
+  .cardList {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    padding-bottom: 20px;
+  }
+  .detail {
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+
+    &__image {
+      width: 60vw;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .header {
+    width: 100vw;
+    &__logo {
+      width: 80vw;
+      padding-top: 40px;
+    }
+  }
+  .section {
+    background-color: vars.$color-secondary;
+    display: flex;
+    justify-content: center;
+  }
+  .cardList {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-bottom: 20px;
+    width: 90vw;
+  }
+  .detail {
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+
+    &__image {
+      width: 80vw;
+    }
   }
 }
